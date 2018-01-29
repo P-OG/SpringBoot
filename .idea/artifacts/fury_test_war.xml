@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fury-test:war">
+    <output-path>$PROJECT_DIR$/fury-test/target</output-path>
+    <root id="archive" name="fury-test.war">
+      <element id="artifact" artifact-name="fury-test:war exploded" />
+    </root>
+  </artifact>
+</component>
