@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fury.dao.master.ITeamMapper">
+  <resultMap id="BaseResultMap" type="com.fury.domain.TeamVo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="team_id" jdbcType="VARCHAR" property="teamId" />
+    <result column="team_header_id" jdbcType="VARCHAR" property="teamHeaderId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_aval" jdbcType="CHAR" property="isAval" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+
+  <select id="selectTeamByTeamHeaderId" parameterType="java.lang.String" resultMap="BaseResultMap" >
+  	SELECT id,
+			team_id,
+			team_header_id,
+			`name`,
+			head_img,
+			create_time 
+		FROM t_t_team t WHERE team_header_id = #{id}
+  </select>
+</mapper>

@@ -17,9 +17,10 @@ import org.springframework.context.annotation.ComponentScan;
  * @CreateDate: 2018/1/15 10:54
  */
 //@EnableSwagger2Doc //Swagger注解
-@SpringBootApplication //Spring Boot应用的标识，等同于 @Configuration @EnableAutoConfiguration @ComponentScanpublic
+//Spring Boot应用的标识，等同于 @Configuration @EnableAutoConfiguration @ComponentScanpublic
+@SpringBootApplication
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-//@EnableConfigurationProperties
+@EnableConfigurationProperties
 //@ComponentScan(basePackages = {"com.fury.controller", "com.fury.service", "com.fury.listener"})
 //@MapperScan(basePackages = {"com.fury.dao"}) //设置 Mapper 接口所在的包
 public class Application {
