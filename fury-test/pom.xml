@@ -35,20 +35,12 @@
                 <environment>dev</environment>
             </properties>
         </profile>
-        <!--<profile>
-            <id>dat</id>-->
-            <!-- <activation>
-                 <activeByDefault>true</activeByDefault>
-             </activation>-->
-        <!--<properties>
-            <environment>dat</environment>
-        </properties>
-    </profile>-->
     </profiles>
     <build>
         <finalName>fury-test</finalName>
         <pluginManagement>
             <plugins>
+                <!-- maven插件 -->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -89,34 +81,18 @@
                 <!--<targetPath>META-INF/resources</targetPath>-->
                 <excludes>
                     <exclude>application-dev.properties</exclude>
-                    <!--<exclude>application-prd.properties</exclude>-->
                     <exclude>application.properties</exclude>
                 </excludes>
             </resource>
-            <!--<resource>-->
-                <!--<directory>src/main/java</directory>-->
-                <!--<includes>-->
-                    <!--<include>**/*.properties</include>-->
-                    <!--<include>**/*.xml</include>-->
-                <!--</includes>-->
-                <!--<filtering>true</filtering>-->
-            <!--</resource>-->
-            <!--<resource>-->
-                <!--<directory>src/main/resources</directory>-->
-                <!--<includes>-->
-                    <!--<include>**/*.properties</include>-->
-                    <!--<include>**/*.xml</include>-->
-                <!--</includes>-->
-                <!--<filtering>true</filtering>-->
-            <!--</resource>-->
-            <!--<resource>-->
-                <!--<directory>src/main/resources/public</directory>-->
-                <!--<includes>-->
-                    <!--<include>**/*.properties</include>-->
-                    <!--<include>**/*.xml</include>-->
-                <!--</includes>-->
-                <!--<filtering>true</filtering>-->
-            <!--</resource>-->
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <!--<targetPath>META-INF/resources</targetPath>-->
+                <includes>
+                    <include>application-${environment}.properties</include>
+                    <include>application.properties</include>
+                </includes>
+            </resource>
         </resources>
     </build>
 </project>

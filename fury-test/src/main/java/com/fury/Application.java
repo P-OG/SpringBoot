@@ -16,8 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
  * @Description: 应用入口类
  * @CreateDate: 2018/1/15 10:54
  */
-//@EnableSwagger2Doc //Swagger注解
-//Spring Boot应用的标识，等同于 @Configuration @EnableAutoConfiguration @ComponentScanpublic
+//@EnableSwagger2Doc // Swagger注解
+// Spring Boot应用的标识，等同于 @Configuration @EnableAutoConfiguration @ComponentScanpublic
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 @EnableConfigurationProperties

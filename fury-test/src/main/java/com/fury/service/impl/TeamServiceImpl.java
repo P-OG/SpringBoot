@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @Author: pxp
  * @Description: 团队服务实现类
@@ -20,8 +22,13 @@ public class TeamServiceImpl implements ITeamService {
 
     @Override
     @Transactional
-    public TeamVo selectTeamByTeamHeaderId(String id) {
+    public TeamVo selectTeamByTeamHeaderId(Integer id) {
         return teamMapper.selectTeamByTeamHeaderId(id);
+    }
+
+    @Override
+    public List<TeamVo> selectAllTeam() {
+        return teamMapper.selectAllTeam();
     }
 
 }

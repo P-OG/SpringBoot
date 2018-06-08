@@ -2,6 +2,8 @@ package com.fury.service;
 
 import com.fury.domain.TeamVo;
 
+import java.util.List;
+
 /**
  * @Author: pxp
  * @Description: 团队服务接口类
@@ -9,5 +11,7 @@ import com.fury.domain.TeamVo;
  */
 public interface ITeamService {
 
-    public TeamVo selectTeamByTeamHeaderId(String id);
+    TeamVo selectTeamByTeamHeaderId(Integer id);
+
+    List<TeamVo> selectAllTeam();
 }

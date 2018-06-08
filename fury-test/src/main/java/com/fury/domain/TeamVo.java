@@ -1,6 +1,10 @@
 package com.fury.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -14,18 +18,21 @@ public class TeamVo implements Serializable {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull(message = "主键ID不能为空")
     public Long id;
 
     /**
      * 团ID
      */
     @Column(name = "team_id")
+    @NotEmpty(message = "团ID不能为空")
     private String teamId;
 
     /**
      * 团长ID
      */
     @Column(name = "team_header_id")
+    @NotEmpty(message = "团长ID不能为空")
     private String teamHeaderId;
 
     /**
@@ -44,6 +51,7 @@ public class TeamVo implements Serializable {
      * 创建时间
      */
     @Column(name = "create_time")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private String createTime;
 
     /**

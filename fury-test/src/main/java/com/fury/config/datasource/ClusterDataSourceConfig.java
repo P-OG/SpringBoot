@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
@@ -20,9 +19,10 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * @Author: pxp
- * @Description: 数据源配置类
- * @CreateDate: 2018/1/16 22:54
+ * 数据源配置类
+ *
+ * @author pxp
+ * @date 2018/1/16 22:54
  */
 // 注册到springboot容器中
 @Configuration
@@ -30,9 +30,9 @@ import java.util.Properties;
 @MapperScan(basePackages = {"com.fury.dao.cluster"}, sqlSessionFactoryRef = "clusterSqlSessionFactory")
 public class ClusterDataSourceConfig {
 
-    @Value("${spring.datasource.cluster.clusterMapperLocations}")
+    @Value("${datasource.cluster.clusterMapperLocations}")
     private String clusterMapperLocations;
-    @Value("${spring.datasource.cluster.typeAliasesPackage}")
+    @Value("${datasource.cluster.typeAliasesPackage}")
     private String typeAliasesPackage;
 
     /**
@@ -41,7 +41,7 @@ public class ClusterDataSourceConfig {
      * @return
      */
     @Bean(name = "clusterDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.cluster")
+    @ConfigurationProperties(prefix = "datasource.cluster")
     public DruidDataSource masterDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         Properties properties = new Properties();
